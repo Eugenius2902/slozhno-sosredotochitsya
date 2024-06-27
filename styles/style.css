@@ -1,5 +1,139 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: url(/images/cover-image-light.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: var(--main-font), sans-serif;
+  border: 1px dotted blue;
+  
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  min-block-size: 100vh;
+  padding: 10px;
+  align-items: center;
+  
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+
+
+.header_decor {
+  display: none;
+}
+
+
+
+.header__theme-menu {
+    
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.header_title {
+  color: #FFC2E6;
+  font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.title-decor {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--text-color);
+  background-color: var(--accent-color);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 40px 10px;
+}
+
+.section_title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--text-color);
+  margin-block-end: 20px;
+}
+.title_regular {
+  font-weight: normal;
+}
+.text {
+  margin-block-start: 10px;
+  margin-block-end: 10px;
+}
+
+.text-link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0 var(--accent-color);
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.text-link:focus {
+  outline: 0;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+.section-gallery {
+  display: grid;
+  gap: 10px;
+}
+.gallery_image {
+ width: 100%;
+  
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  block-size: 100vh;
+  
+
+}
+
+.footer__title {
+  color: #FFC2E6;
+  font-weight: bold;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  line-height: 83%;
+  text-shadow: 2px 2px 0 var(--text-shadow-color);
+}
+
+
+
+
+
+
+@media (width <=768px) {
+  .header__theme-menu {
+    display: flex;
+    justify-content: end;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
