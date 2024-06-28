@@ -7,7 +7,7 @@
   background-position: center;
   background-attachment: fixed;
   font-family: var(--main-font), sans-serif;
-  border: 1px dotted blue;
+  
   
 }
 
@@ -15,15 +15,33 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   min-block-size: 100vh;
-  padding: 10px;
-  align-items: center;
-  
+  padding: 10px; 
 }
 
 .decorated-zone {
   position: relative;
 }
 
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+.decorated-zone::before {
+  top: 10px;
+  right: 10px;
+  border-inline-end: 1px solid var(--text-color);
+  border-block-start: 1px solid var(--text-color);
+}
+
+.decorated-zone::after {
+  bottom: 10px;
+  left: 10px;  
+  border-inline-start: 1px solid var(--text-color);
+  border-block-end: 1px solid var(--text-color);
+}
 
 
 .header_decor {
@@ -31,19 +49,53 @@
 }
 
 
-
 .header__theme-menu {
-    
+  
 }
+
 
 .header__theme-menu-list {
   display: flex;
-  flex-direction: row;
+  gap: 10px;
 }
 
+.header__theme-menu-button {
+  border: none;
+  padding: 0px 13px;
+  min-inline-size: 70px;
+  min-height: 26px;
+  color: var(--text-color);
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: lowercase;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--text-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--text-color);
+  pointer-events: none;
+}
+
+.header_description {
+place-content: center;
+}
 
 .header_title {
-  color: #FFC2E6;
+  color: var(--header-title-color);
   font-weight: bold;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
@@ -57,6 +109,14 @@
   color: var(--text-color);
   background-color: var(--accent-color);
 }
+
+
+
+
+
+
+
+
 
 .content {
   display: flex;
@@ -90,12 +150,9 @@
 }
 
 .text-link:focus {
-  outline: 0;
+  outline: 1px solid var(--text-color);
 }
 
-.link:focus-visible {
-  outline: 1px solid currentColor;
-}
 .section-gallery {
   display: grid;
   gap: 10px;
@@ -110,15 +167,14 @@
   align-items: center;
   block-size: 100vh;
   
-
 }
 
 .footer__title {
-  color: #FFC2E6;
+  color: var(--header-title-color);
   font-weight: bold;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 83%;
-  text-shadow: 2px 2px 0 var(--text-shadow-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 
