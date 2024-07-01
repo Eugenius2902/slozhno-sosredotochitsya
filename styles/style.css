@@ -93,7 +93,7 @@
   display: flex;
   justify-self: end;
   align-self: center;
-  width: clamp(355px, 50%, 491px);
+  width: 100%;
   height: min-content;
 }
 
@@ -108,36 +108,51 @@
 .title-decor {
   font-weight: 700;
   font-size: var(--main-font-size);
-  line-height: 130%;
-  color: var(--text-color);
+  line-height: var(--main-line-height);
+  color: var(--title-decor-color);
   background-color: var(--accent-color);
 }
+
+
+
+
+
+
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 30px;
   padding: 40px 10px;
 }
 
+.section {
+  display: grid;
+  gap: 20px;
+}
 
 .section_title {
   font-weight: 700;
   width: 100%;
   font-size: var(--main-font-size);
-  line-height: 130%;
+  line-height: var(--main-line-height);
   color: var(--text-color);
+}
+
+.title-decor_regular {
+  font-weight: normal;
+}
+
+.section_subtitle {
   margin-block-end: 20px;
 }
 
-.title_regular {
-  font-weight: normal;
-  margin-block-start: 20px;
-}
-
 .text {
-  margin-block-start: 10px;
-  margin-block-end: 10px;
+  font-family: var(--main-font);
+  color: var(--text-color);
+  line-height: var(--main-line-height);
+  padding-block-start: 10px;
+  padding-block-end: 20px;
 }
 
 .text-link {
@@ -153,6 +168,10 @@
   outline: 1px solid var(--text-color);
 }
 
+
+
+
+
 .section_gallery {
   display: grid;
   gap: 10px;
@@ -163,13 +182,15 @@
  object-fit: cover;
 }
 
+
+
+
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
   block-size: 100vh;
 }
-
 .footer__title {
   color: var(--header-title-color);
   font-weight: bold;
@@ -177,6 +198,8 @@
   line-height: 83%;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
+
+
 
 
 
@@ -199,21 +222,26 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
+  .header_description {
+    width: calc(100%/2 - 40px);
+  }
+
   .content {
-    gap: 80px;
+    gap: 60px;
     padding: 60px 20px;
   }
 
 .section_reasons,
 .section_advises {
-  display: grid;
-  gap: 20px;
   grid-template-columns: 1fr 2fr;
 }
 
 .section_title {
-  width: clamp(236px, calc(100%/3 - 20px), 315px);
-  margin-block-end: 20px;
+  width: clamp(236px, calc(100vw/3 - 20px), 315px);
+}
+
+.section_gallery {
+  gap: 20px;
 }
 
 .gallery_list {
@@ -259,6 +287,18 @@
     flex-direction: row;
   }
 
- 
-}
+  .header_title {
+    text-shadow: 4px 4px 0 var(--text-shadow-color);
+  }
+
+  .footer__title {
+    text-shadow: 2px 2px 0 var(--text-shadow-color);
+  }
+
+  .causes_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+ }
 

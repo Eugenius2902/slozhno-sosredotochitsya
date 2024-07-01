@@ -10,20 +10,48 @@
     чем стили в медиазапросе предпочтений пользователя
   */
 }
+.page {
+  background-image: url(/images/cover-image-dark.png);
+}
 
 .header_decor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
   top: 10px;
   right: 19px;
   color: var(--accent-color);
-  font-size: 18px;
+  font-size: var(--main-font-size);
 }
 
 .header_decor:after {
   content: "";
   display: block;
+  position: relative;
   width: 9px;
   height: 9px;
   box-shadow: 0 0 4px 2px var(--accent-color);
   border-radius: 100%;
   background-color: var(--accent-color), #ff0070;
+}
+
+@media (width >=768px) {
+  .header_decor {
+    top: 20px;
+    right: 29px;
+  }
+  
+}
+
+
+:root {
+  --text-color: #F1B2CE;
+  --accent-color: #FF0070;
+  --header-title-color: #DB00FF;
+  --text-shadow-color: #ff0070;
+  --title-decor-color: #000028;
+  --main-font: 'IBM Plex mono';
+  --main-font-size: 18px;
+  --main-line-height: 23.4px;
 }
