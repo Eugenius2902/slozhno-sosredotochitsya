@@ -6,6 +6,8 @@
   font-family: var(--main-font), sans-serif;
 }
 
+/*Header*/
+
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
@@ -25,9 +27,10 @@
 .decorated-zone::after {
   content: "";
   position: absolute;
-  width: 25px;
-  height: 25px;
+  inline-size: 25px;
+  block-size: 25px;
 }
+
 .decorated-zone::before {
   top: 10px;
   right: 10px;
@@ -59,8 +62,8 @@
   content: "";
   display: block;
   position: relative;
-  width: 9px;
-  height: 9px;
+  inline-size: 9px;
+  block-size: 9px;
   box-shadow: 0 0 4px 2px var(--accent-color);
   border-radius: 100%;
   background-color: var(--accent-color);
@@ -84,7 +87,7 @@
   background-color: transparent;
   padding: 0px 13px;
   min-inline-size: 70px;
-  min-height: 26px;
+  min-block-size: 26px;
   color: var(--menu-color);
   font-size: var(--main-font-size);
   line-height: 100%;
@@ -114,8 +117,8 @@
   display: flex;
   justify-self: end;
   align-self: center;
-  width: 100%;
-  height: min-content;
+  inline-size: 100%;
+  block-size: min-content;
   color: var(--title-decor-color);
 }
 
@@ -135,21 +138,33 @@
   background-color: var(--accent-color);
 }
 
+/*MAIN SECTION*/
+
 .content {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  display: grid;
+  gap: 50px;
   padding: 40px 10px;
 }
 
 .section {
   display: grid;
-  gap: 20px;
+  gap: var(--gap_size-medium);
+}
+
+.section_list {
+  display: grid;
+  gap: var(--gap_size-medium);
+  align-items: start;
+}
+
+.list-item {
+  display: grid;
+  gap: var(--gap_size-small);
 }
 
 .section_title {
   font-weight: 700;
-  width: 100%;
+  inline-size: 100%;
   font-size: var(--main-font-size);
   line-height: var(--main-line-height);
   color: var(--section-title-color);
@@ -159,16 +174,10 @@
   font-weight: 400;
 }
 
-.section_subtitle {
-  margin-block-end: 20px;
-}
-
 .text {
   font-family: var(--main-font);
   color: var(--text-color);
   line-height: var(--main-line-height);
-  padding-block-start: 10px;
-  padding-block-end: 20px;
 }
 
 .text-link {
@@ -177,29 +186,27 @@
 }
 
 .text-link:hover {
-  text-decoration: underline;
+  text-decoration: underline; 
 }
 
 .text-link:focus {
   outline: 1px solid var(--text-color);
 }
 
-
-
-
+/*MAIN GALLERY*/
 
 .section_gallery {
   display: grid;
-  gap: 10px;
+  gap: var(--gap_size-small);
 }
+
 .gallery_image {
- width: 100%;
- height: 100%;
+ inline-size: 100%;
+ block-size: 100%;
  object-fit: cover;
 }
 
-
-
+/*FOOTER*/
 
 .footer {
   display: flex;
@@ -215,9 +222,7 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
-
-
-
+/*Media 768px*/
 
 @media (width >=768px) {
   .header {
@@ -229,11 +234,12 @@
     top: 20px;
     right: 20px;
   }
-  
+
   .decorated-zone::after {
     bottom: 20px;
     left: 20px;  
   }
+
   .header_decor {
     top: 20px;
     right: 29px;
@@ -244,37 +250,42 @@
   }
 
   .header_description {
-    width: clamp(364px, 491px, calc(100%/2));
+    inline-size: calc(50% - 20px);
   }
 
   .content {
-    gap: 60px;
+    gap: 80px;
     padding: 60px 20px;
   }
 
-.section_reasons,
-.section_advises {
-  grid-template-columns: 1fr 2fr;
-}
+  .section_reasons,
+  .section_advises {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .reasons_list,
+  .advises_list {
+    grid-column-start: span 2;
+  }
+
 
 .section_title {
-  width: clamp(236px, calc(100vw/3 - 20px), 315px);
-}
+    inline-size: clamp(236px, calc(100vw/3 - 20px), 315px);
+  }
 
 .section_gallery {
-  gap: 20px;
-}
+    gap: var(--gap_size-medium);
+  }
 
 .gallery_list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, min-content);
-  gap: 20px;
+  gap: var(--gap_size-medium);
   grid-template-areas: 
-  "sunset sunset ice-cream"
-  "tape books ice-cream"
-  "tape street street";
-}
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street";
+  }
 
 .gallery_item-sunset {
   grid-area: sunset;
@@ -295,10 +306,12 @@
 .gallery_item-street {
   grid-area: street;
 }
-
 }
 
+/*Media 1024px*/
+
 @media (width >= 1024px) {
+
   .header__theme-menu {
     justify-content: center;
     align-items: start;
@@ -317,9 +330,7 @@
   }
 
   .causes_list {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
   }
  }
 

@@ -12,10 +12,12 @@
   --header-title-color: #ffc2e6;
   --decor-color: #353430;
   --title-decor-color: #353430;
-  --main-font: 'IBM Plex mono';
+  --main-font: 'IBM Plex mono', sans-serif;
   --main-font-size: 18px;
   --main-line-height: 23.4px;
   --text-shadow-color: #ff0070;
   --section-title-color: #343430;
   --visibility: hidden;
+  --gap_size-small: 10px;
+  --gap_size-medium: 20px;
 }
