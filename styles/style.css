@@ -2,8 +2,12 @@
 /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 
 .page {
-  background-color: var(--background-color);
   font-family: var(--main-font), sans-serif;
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /*Header*/
@@ -12,11 +16,7 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   min-block-size: 100vh;
-  padding: 10px; 
-  background-image: var(--background-image);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  padding: 10px;
 }
 
 .decorated-zone {
@@ -40,7 +40,7 @@
 
 .decorated-zone::after {
   bottom: 10px;
-  left: 10px;  
+  left: 10px;
   border-inline-start: 1px solid var(--decor-color);
   border-block-end: 1px solid var(--decor-color);
 }
@@ -80,7 +80,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  }
+}
 
 .header__theme-menu-button {
   border: none;
@@ -186,14 +186,14 @@
 }
 
 .text-link:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
 .text-link:focus {
   outline: 1px solid var(--text-color);
 }
 
-/*MAIN GALLERY*/
+/*MAIN_GALLERY*/
 
 .section_gallery {
   display: grid;
@@ -201,9 +201,9 @@
 }
 
 .gallery_image {
- inline-size: 100%;
- block-size: 100%;
- object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
 }
 
 /*FOOTER*/
@@ -237,7 +237,7 @@
 
   .decorated-zone::after {
     bottom: 20px;
-    left: 20px;  
+    left: 20px;
   }
 
   .header_decor {
@@ -262,56 +262,55 @@
   .section_advises {
     grid-template-columns: repeat(3, 1fr);
   }
+  
   .reasons_list,
   .advises_list {
     grid-column-start: span 2;
   }
 
-
-.section_title {
-    inline-size: clamp(236px, calc(100vw/3 - 20px), 315px);
+  .section_title {
+    inline-size: clamp(236px, calc(100vw / 3 - 20px), 315px);
   }
 
-.section_gallery {
+  .section_gallery {
     gap: var(--gap_size-medium);
   }
 
-.gallery_list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, min-content);
-  gap: var(--gap_size-medium);
-  grid-template-areas: 
-    "sunset sunset ice-cream"
-    "tape books ice-cream"
-    "tape street street";
+  .gallery_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    gap: var(--gap_size-medium);
+    grid-template-areas:
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
   }
 
-.gallery_item-sunset {
-  grid-area: sunset;
-}
+  .gallery_item-sunset {
+    grid-area: sunset;
+  }
 
-.gallery_item-ice-cream {
-  grid-area: ice-cream;
-}
+  .gallery_item-ice-cream {
+    grid-area: ice-cream;
+  }
 
-.gallery_item-tape {
-  grid-area: tape;
-}
+  .gallery_item-tape {
+    grid-area: tape;
+  }
 
-.gallery_item-books {
-  grid-area: books;
-}
+  .gallery_item-books {
+    grid-area: books;
+  }
 
-.gallery_item-street {
-  grid-area: street;
-}
+  .gallery_item-street {
+    grid-area: street;
+  }
 }
 
 /*Media 1024px*/
 
 @media (width >= 1024px) {
-
   .header__theme-menu {
     justify-content: center;
     align-items: start;
@@ -332,5 +331,4 @@
   .causes_list {
     grid-template-columns: repeat(3, 1fr);
   }
- }
-
+}

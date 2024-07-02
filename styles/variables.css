@@ -3,21 +3,21 @@
   и их переопределение под различные устройства
 */
 :root {
-  --background-color: #fff1f7;
-  --background-image: url(/images/cover-image-light.png);
-  --text-color: #353430;
-  --accent-color: #FF8DCB;
-  --menu-color: #353430;
-  --hover-border-color: rgba(53, 52, 48, 0.4);
-  --header-title-color: #ffc2e6;
-  --decor-color: #353430;
-  --title-decor-color: #353430;
-  --main-font: 'IBM Plex mono', sans-serif;
+  --background-color: #000028;
+  --background-image: url(/images/cover-image-dark.png);
+  --text-color: #f1b2ce;
+  --accent-color: #ff0070;
+  --menu-color: #ff0070;
+  --hover-border-color: rgb(255, 0, 112, 0.4);
+  --header-title-color: #db00ff;
+  --decor-color: #ff0070;
+  --text-shadow-color: #ff0070;
+  --title-decor-color: #000028;
+  --main-font: "IBM Plex mono", sans-serif;
   --main-font-size: 18px;
   --main-line-height: 23.4px;
-  --text-shadow-color: #ff0070;
-  --section-title-color: #343430;
-  --visibility: hidden;
+  --section-title-color: #ff0070;
+  --visibility: visible;
   --gap_size-small: 10px;
   --gap_size-medium: 20px;
 }
