@@ -208,6 +208,8 @@
 
 .gallery_list {
   display: grid;
+  inline-size: 100%;
+  block-size: 100%;
   gap: var(--gap_size-small);
 }
 
@@ -215,6 +217,7 @@
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 /*FOOTER*/
@@ -288,9 +291,8 @@
   }
 
   .gallery_list {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, min-content);
+    grid-template-rows: auto auto 428px;
     gap: var(--gap_size-medium);
     grid-template-areas:
       "sunset sunset ice-cream"
