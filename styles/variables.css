@@ -13,7 +13,7 @@
   --decor-color: #ff0070;
   --text-shadow-color: #ff0070;
   --title-decor-color: #000028;
-  --main-font: "IBM Plex mono", sans-serif;
+  --main-font: "IBM Plex mono", monospace;
   --main-font-size: 18px;
   --main-line-height: 23.4px;
   --section-title-color: #ff0070;
