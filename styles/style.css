@@ -192,6 +192,10 @@
 }
 
 .text-link:focus {
+  outline: none;
+}
+
+.text-link:focus-visible {
   outline: 1px solid var(--text-color);
 }
 
@@ -214,7 +218,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  block-size: 100vh;
+  min-block-size: 100vh;
 }
 .footer__title {
   color: var(--header-title-color);
@@ -248,11 +252,10 @@
 
   .header_title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    padding-inline-start: -10px;
   }
 
   .header_description {
-    inline-size: calc(50% - 20px);
+    inline-size: min(calc(100%/2 - 10px), 491px);
   }
 
   .content {
