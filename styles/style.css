@@ -206,6 +206,11 @@
   gap: var(--gap_size-small);
 }
 
+.gallery_list {
+  display: grid;
+  gap: var(--gap_size-small);
+}
+
 .gallery_image {
   inline-size: 100%;
   block-size: 100%;
@@ -231,8 +236,9 @@
 /*Media 768px*/
 
 @media (width >=768px) {
+  
   .header {
-    padding: 20px 20px 0 0;
+    padding: 20px 20px 20px 0;
   }
 
   .decorated-zone::before {
@@ -316,6 +322,7 @@
 /*Media 1024px*/
 
 @media (width >= 1024px) {
+  
   .header__theme-menu {
     justify-content: center;
     align-items: start;
