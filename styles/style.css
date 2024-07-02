@@ -125,6 +125,7 @@
 .header_title {
   color: var(--header-title-color);
   font-weight: 700;
+
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -227,8 +228,7 @@
 
 @media (width >=768px) {
   .header {
-    padding-block-start: 20px;
-    padding-inline-end: 20px;
+    padding: 20px 20px 0 0;
   }
 
   .decorated-zone::before {
@@ -248,6 +248,7 @@
 
   .header_title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    padding-inline-start: -10px;
   }
 
   .header_description {
@@ -263,7 +264,7 @@
   .section_advises {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .reasons_list,
   .advises_list {
     grid-column-start: span 2;
