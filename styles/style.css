@@ -76,7 +76,7 @@
 
 .header__theme-menu-list {
   display: flex;
-  gap: 10px;
+  gap: var(--gap_size-small);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -85,7 +85,7 @@
 .header__theme-menu-button {
   border: none;
   background-color: transparent;
-  padding: 0px 13px;
+  padding: 1px;
   min-inline-size: 70px;
   min-block-size: 26px;
   color: var(--menu-color);
@@ -185,6 +185,7 @@
 .text-link {
   text-decoration: none;
   text-shadow: 2px 1px 0 var(--accent-color);
+  cursor: pointer;
 }
 
 .text-link:hover {
@@ -327,6 +328,7 @@
   .header__theme-menu {
     justify-content: center;
     align-items: start;
+    gap: var(--gap_size-small);
   }
 
   .header__theme-menu-list {
