@@ -208,8 +208,7 @@
 
 .gallery_list {
   display: grid;
-  inline-size: 100%;
-  block-size: 100%;
+  grid-template-rows: 142px 355px 237px 355px 237px;
   gap: var(--gap_size-small);
 }
 
