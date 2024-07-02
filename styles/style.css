@@ -2,10 +2,7 @@
 /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 
 .page {
-  background-image: url(/images/cover-image-light.png);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: var(--background-color);
   font-family: var(--main-font), sans-serif;
 }
 
@@ -14,6 +11,10 @@
   grid-template-rows: 1fr min-content 1fr;
   min-block-size: 100vh;
   padding: 10px; 
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .decorated-zone {
@@ -30,19 +31,39 @@
 .decorated-zone::before {
   top: 10px;
   right: 10px;
-  border-inline-end: 1px solid var(--text-color);
-  border-block-start: 1px solid var(--text-color);
+  border-inline-end: 1px solid var(--decor-color);
+  border-block-start: 1px solid var(--decor-color);
 }
 
 .decorated-zone::after {
   bottom: 10px;
   left: 10px;  
-  border-inline-start: 1px solid var(--text-color);
-  border-block-end: 1px solid var(--text-color);
+  border-inline-start: 1px solid var(--decor-color);
+  border-block-end: 1px solid var(--decor-color);
 }
 
 .header_decor {
-  display: none;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 10px;
+  right: 19px;
+  color: var(--accent-color);
+  font-size: var(--main-font-size);
+  visibility: var(--visibility);
+}
+
+.header_decor:after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 9px;
+  height: 9px;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  border-radius: 100%;
+  background-color: var(--accent-color);
 }
 
 .header__theme-menu {
@@ -55,25 +76,25 @@
   gap: 10px;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   }
-
 
 .header__theme-menu-button {
   border: none;
+  background-color: transparent;
   padding: 0px 13px;
   min-inline-size: 70px;
   min-height: 26px;
-  color: var(--text-color);
+  color: var(--menu-color);
   font-size: var(--main-font-size);
   line-height: 100%;
   text-align: center;
   text-transform: lowercase;
   cursor: pointer;
-  background-color: transparent;
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--hover-border-color);
 }
 
 .header__theme-menu-button:focus {
@@ -81,11 +102,11 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--text-color);
+  border-block-end: 1px solid var(--menu-color);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--menu-color);
   pointer-events: none;
 }
 
@@ -95,6 +116,7 @@
   align-self: center;
   width: 100%;
   height: min-content;
+  color: var(--title-decor-color);
 }
 
 .header_title {
@@ -113,12 +135,6 @@
   background-color: var(--accent-color);
 }
 
-
-
-
-
-
-
 .content {
   display: flex;
   flex-direction: column;
@@ -136,11 +152,11 @@
   width: 100%;
   font-size: var(--main-font-size);
   line-height: var(--main-line-height);
-  color: var(--text-color);
+  color: var(--section-title-color);
 }
 
 .title-decor_regular {
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .section_subtitle {
@@ -218,12 +234,17 @@
     bottom: 20px;
     left: 20px;  
   }
+  .header_decor {
+    top: 20px;
+    right: 29px;
+  }
+
   .header_title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .header_description {
-    width: calc(100%/2 - 40px);
+    width: clamp(364px, 491px, calc(100%/2));
   }
 
   .content {
