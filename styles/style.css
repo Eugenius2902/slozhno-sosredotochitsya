@@ -291,7 +291,7 @@
 
   .gallery_list {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto 428px;
+    grid-template-rows: auto auto 318px;
     gap: var(--gap_size-medium);
     grid-template-areas:
       "sunset sunset ice-cream"
@@ -344,4 +344,7 @@
   .causes_list {
     grid-template-columns: repeat(3, 1fr);
   }
+  .gallery_list {
+    grid-template-rows: auto auto 428px;
+}
 }
