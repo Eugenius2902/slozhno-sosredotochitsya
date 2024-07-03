@@ -10,20 +10,15 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --background-color: #000028;
-  --background-image: url(/images/cover-image-dark.png);
+  --background-image: url(../images/cover-image-dark.png);
   --text-color: #f1b2ce;
   --accent-color: #ff0070;
   --menu-color: #ff0070;
   --hover-border-color: rgb(255, 0, 112, 0.4);
-  --header-title-color: #db00ff;
+  --page-title-color: #db00ff;
   --decor-color: #ff0070;
   --text-shadow-color: #ff0070;
   --title-decor-color: #000028;
-  --main-font: "IBM Plex mono", monospace;
-  --main-font-size: 18px;
-  --main-line-height: 23.4px;
   --section-title-color: #ff0070;
   --visibility: visible;
-  --gap_size-small: 10px;
-  --gap_size-medium: 20px;
 }

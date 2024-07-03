@@ -45,7 +45,7 @@
   border-block-end: 1px solid var(--decor-color);
 }
 
-.header_decor {
+.header__decor {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -58,7 +58,7 @@
   visibility: var(--visibility);
 }
 
-.header_decor:after {
+.header__decor:after {
   content: "";
   display: block;
   position: relative;
@@ -113,7 +113,7 @@
   pointer-events: none;
 }
 
-.header_description {
+.header__description {
   display: flex;
   justify-self: end;
   align-self: center;
@@ -122,12 +122,14 @@
   color: var(--title-decor-color);
 }
 
-.header_title {
-  color: var(--header-title-color);
+.page__title {
+  color: var(--page-title-color);
   font-weight: 700;
-
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--page-title-font-size);
   line-height: 83%;
+}
+
+.header .page__title {
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
@@ -152,18 +154,23 @@
   gap: var(--gap_size-medium);
 }
 
-.section_list {
+.section__list {
   display: grid;
   gap: var(--gap_size-medium);
   align-items: start;
 }
 
-.list-item {
+.list__item {
   display: grid;
   gap: var(--gap_size-small);
 }
 
-.section_title {
+.section-advises__block {
+  display: grid;
+  gap: var(--gap_size-medium);
+}
+
+.section__title {
   font-weight: 700;
   inline-size: 100%;
   font-size: var(--main-font-size);
@@ -202,18 +209,18 @@
 
 /*MAIN_GALLERY*/
 
-.section_gallery {
+.section-gallery {
   display: grid;
   gap: var(--gap_size-small);
 }
 
-.gallery_list {
+.gallery-list {
   display: grid;
   grid-template-rows: 142px 355px 237px 355px 237px;
   gap: var(--gap_size-small);
 }
 
-.gallery_image {
+.gallery-list__image {
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
@@ -228,18 +235,14 @@
   align-items: center;
   min-block-size: 100vh;
 }
-.footer__title {
-  color: var(--header-title-color);
-  font-weight: bold;
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  line-height: 83%;
+
+.footer .page__title {
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 /*Media 768px*/
 
 @media (width >=768px) {
-  
   .header {
     padding: 20px 20px 20px 0;
   }
@@ -254,17 +257,13 @@
     left: 20px;
   }
 
-  .header_decor {
+  .header__decor {
     top: 20px;
     right: 29px;
   }
 
-  .header_title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
-  .header_description {
-    inline-size: min(calc(100%/2 - 10px), 491px);
+  .header__description {
+    inline-size: min(calc(100% / 2 - 10px), 491px);
   }
 
   .content {
@@ -272,25 +271,25 @@
     padding: 60px 20px;
   }
 
-  .section_reasons,
-  .section_advises {
+  .section-reasons,
+  .section-advises {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .reasons_list,
-  .advises_list {
+  .reasons-list,
+  .section-advises__block {
     grid-column-start: span 2;
   }
 
-  .section_title {
+  .section__title {
     inline-size: clamp(236px, calc(100vw / 3 - 20px), 315px);
   }
 
-  .section_gallery {
+  .section-gallery {
     gap: var(--gap_size-medium);
   }
 
-  .gallery_list {
+  .gallery-list {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto 318px;
     gap: var(--gap_size-medium);
@@ -300,23 +299,23 @@
       "tape street street";
   }
 
-  .gallery_item-sunset {
+  .gallery__item-sunset {
     grid-area: sunset;
   }
 
-  .gallery_item-ice-cream {
+  .gallery__item-ice-cream {
     grid-area: ice-cream;
   }
 
-  .gallery_item-tape {
+  .gallery__item-tape {
     grid-area: tape;
   }
 
-  .gallery_item-books {
+  .gallery__item-books {
     grid-area: books;
   }
 
-  .gallery_item-street {
+  .gallery__item-street {
     grid-area: street;
   }
 }
@@ -324,7 +323,6 @@
 /*Media 1024px*/
 
 @media (width >= 1024px) {
-  
   .header__theme-menu {
     justify-content: center;
     align-items: start;
@@ -336,18 +334,19 @@
     flex-direction: row;
   }
 
-  .header_title {
+  .header .page__title {
     text-shadow: 4px 4px 0 var(--text-shadow-color);
   }
 
-  .footer__title {
+  .footer .page__title {
     text-shadow: 2px 2px 0 var(--text-shadow-color);
   }
 
-  .causes_list {
+  .causes-list {
     grid-template-columns: repeat(3, 1fr);
   }
-  .gallery_list {
+
+  .gallery-list {
     grid-template-rows: auto auto 428px;
-}
+  }
 }
